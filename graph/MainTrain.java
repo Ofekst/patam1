@@ -1,8 +1,4 @@
-package test;
-
-import java.util.Random;
-
-import test.TopicManagerSingleton.TopicManager;
+package graph;
 
 public class MainTrain { // simple tests to get you going...
 

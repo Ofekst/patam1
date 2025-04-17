@@ -1,4 +1,4 @@
-package test;
+package graph;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
@@ -47,6 +47,9 @@ public class Message {
      * The function gets data as String
      * and try to convert it into Double
      * if can't return NaN
+     *
+     * @param data - Message data as string
+     * @return data as double or NaN
      */
     private double convertToDouble(String data) {
         try {

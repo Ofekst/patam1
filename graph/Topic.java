@@ -1,4 +1,4 @@
-package test;
+package graph;
 
 public class Topic {
     public final String name;

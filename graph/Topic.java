@@ -20,7 +20,7 @@ public class Topic {
      *
      * @param name the name of the topic
      */
-    Topic(String name) {
+    public Topic(String name) {
         this.name = name;
         this.subs = new ArrayList<>();
         this.pubs = new ArrayList<>();
@@ -29,47 +29,49 @@ public class Topic {
     /**
      * Subscribes an agent to this topic.
      *
-     * @param a the agent to subscribe
+     * @param agent the agent to subscribe
      */
-    public void subscribe(Agent a) {
-        this.subs.add(a);
+    public void subscribe(Agent agent) {
+
+        this.subs.add(agent);
     }
 
     /**
      * Unsubscribes an agent from this topic.
      *
-     * @param a the agent to unsubscribe
+     * @param agent the agent to unsubscribe
      */
-    public void unsubscribe(Agent a) {
-        this.subs.remove(a);
+    public void unsubscribe(Agent agent) {
+
+        this.subs.remove(agent);
     }
 
     /**
      * Publishes a message to all subscribers of this topic.
      * Each subscriber receives the message through its callback method.
      *
-     * @param m the message to publish
+     * @param message the message to publish
      */
-    public void publish(Message m) {
-        subs.parallelStream().forEach(a -> a.callback(this.name, m));
+    public void publish(Message message) {
+        subs.parallelStream().forEach(a -> a.callback(this.name, message));
     }
 
     /**
      * Registers an agent as a publisher to this topic.
      *
-     * @param a the agent to add as a publisher
+     * @param agent the agent to add as a publisher
      */
-    public void addPublisher(Agent a) {
-        this.pubs.add(a);
+    public void addPublisher(Agent agent) {
+        this.pubs.add(agent);
     }
 
     /**
      * Removes an agent from the list of publishers of this topic.
      *
-     * @param a the agent to remove
+     * @param agent the agent to remove
      */
-    public void removePublisher(Agent a) {
-        this.pubs.remove(a);
+    public void removePublisher(Agent agent) {
+        this.pubs.remove(agent);
     }
 
     /**

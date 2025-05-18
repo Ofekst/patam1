@@ -2,6 +2,7 @@ package graph;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.Objects;
 import java.util.Random;
 
 import graph.TopicManagerSingleton.TopicManager;
@@ -90,7 +91,7 @@ public class MainTrain { // simple tests to get you going...
             Topic num=tm.getTopic("Numbers");
             Random r=new Random();
             for(int i=0;i<5;i++){
-                double x=r.nextDouble(1000);
+                int x=r.nextInt(1000);
                 num.publish(new Message(x));
                 sum+=x;
             }

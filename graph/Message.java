@@ -37,7 +37,7 @@ public class Message {
      *
      * @param asDouble - Message data as double
      */
-    public Message(Double asDouble) {
+    public Message(double asDouble) {
         this(Double.toString(asDouble));
     }
 

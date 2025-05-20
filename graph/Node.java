@@ -1,7 +1,9 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class Node {
@@ -61,6 +63,45 @@ public class Node {
             this.edges.add(node);
         }
     }
-    //TODO: Need to Add the function hasCycles()
 
+
+    /**
+     * Checks if specific node's edges have cycles
+     *
+     * @param currentNode Current node to check
+     * @param passedNodes Set of all passed nodes
+     * @param  recursionStack Set of the nodes that need to be checked
+     * @return True if node has cycles, else False
+     */
+    private boolean checkCycles(Node currentNode, Set<Node> passedNodes,
+                                Set<Node> recursionStack){
+    passedNodes.add(currentNode);
+    recursionStack.add(currentNode);
+
+    for (Node node: currentNode.edges){
+        if(!passedNodes.contains(node)){
+            if (checkCycles(node,passedNodes,recursionStack)){
+                return true;
+            }
+        }
+        else if (recursionStack.contains(node)) {
+            return true;
+
+        }
+
+    }
+        recursionStack.remove(currentNode);
+        return false;
+    }
+
+    /**
+     * Checks if node has cycles
+     *
+     * @return True if node has cycles, else False
+     */
+    public boolean hasCycles(){
+        Set<Node> passedNodes = new HashSet<Node>();
+        Set<Node> recursionNodes = new HashSet<Node>();
+        return checkCycles(this, passedNodes, recursionNodes);
+    }
 }

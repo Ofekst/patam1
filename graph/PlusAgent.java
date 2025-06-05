@@ -6,7 +6,7 @@ public class PlusAgent implements Agent{
     private final String [] subs;
     private final String [] pubs;
 
-    private final TopicManagerSingleton.TopicManager topicManager;
+    private final TopicManager topicManager;
     private Double x;
     private Double y;
 

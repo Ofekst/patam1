@@ -47,9 +47,9 @@ public class PlusAgent implements Agent{
             this.y = msg.asDouble;
         }
 
-        if (x!= null && this.y!=null){
+        if (this.x!= null && this.y!=null){
             double result = x + y;
-            this.topicManager.getTopic(topic).publish(new Message(result));
+            this.topicManager.getTopic(this.pubs[0]).publish(new Message(result));
         }
     }
 

@@ -1,9 +1,28 @@
 package graph;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
+public class ParallelAgent implements Agent{
+    private final Agent agent;
 
-public class ParallelAgent{
+    public ParallelAgent (Agent agent){
+        this.agent = agent;
+    }
+    @Override
+    public String getName() {
+        return this.agent.getName();
+    }
 
+    @Override
+    public void reset() {
+        this.agent.reset();
+    }
 
+    @Override
+    public void callback(String topic, Message msg) {
+    this.agent.callback(topic,msg);
+    }
+
+    @Override
+    public void close() {
+        agent.close();
+    }
 }

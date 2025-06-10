@@ -1,4 +1,4 @@
-package graph;
+package test;
 
 public class ParallelAgent implements Agent{
     private final Agent agent;

@@ -1,6 +1,6 @@
-package graph;
+package test;
 
-import graph.TopicManagerSingleton.TopicManager;
+import test.TopicManagerSingleton.TopicManager;
 
 public class IncAgent implements Agent {
 

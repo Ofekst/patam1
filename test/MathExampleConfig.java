@@ -1,4 +1,4 @@
-package graph;
+package test;
 
 
 public class MathExampleConfig implements Config {

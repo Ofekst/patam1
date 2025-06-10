@@ -1,9 +1,9 @@
-package graph;
+package test;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
-import graph.RequestParser.RequestInfo;
+import test.RequestParser.RequestInfo;
 
 public interface Servlet {
     void handle(RequestInfo ri, OutputStream toClient) throws IOException;
